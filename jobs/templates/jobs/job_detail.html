@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Job Details
+{% endblock %}
+
+{% block content %}
+    <h2>{{ job.title }}</h2>
+    <p><strong>Company:</strong> {{ job.company }}</p>
+    <p><strong>Location:</strong> {{ job.location }}</p>
+    <p><strong>Description:</strong> {{ job.description }}</p>
+
+    <a href="{% url 'jobs:job_apply' job.id %}" class="btn btn-primary">Apply for this job</a>
+    <a href="{% url 'jobs:job_update' job.id %}" class="btn btn-primary">Edit Job</a>
+    <a href="{% url 'jobs:job_delete' job.id %}" class="btn btn-danger">Delete Job</a>
+{% endblock %}

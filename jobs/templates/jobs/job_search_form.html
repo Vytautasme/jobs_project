@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Job Search</h1>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="search_query" placeholder="Search for jobs">
+        <button type="submit">Search</button>
+    </form>
+{% endblock %}

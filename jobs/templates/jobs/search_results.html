@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Search Results</h1>
+    {% if jobs %}
+        <ul>
+            {% for job in jobs %}
+                <li><a href="{% url 'jobs:job_detail' job.id %}">{{ job.title }}</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No jobs found matching the search criteria.</p>
+    {% endif %}
+{% endblock %}
